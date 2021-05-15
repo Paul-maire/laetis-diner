@@ -1,0 +1,23 @@
+{
+  "name": "laetis-diner",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "up": "docker-compose up",
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/apollo": "^4.0.1-rc.5",
+    "@tailwindcss/forms": "^0.3.2",
+    "core-js": "^3.8.3",
+    "graphql-tag": "^2.12.4",
+    "lodash": "^4.17.21",
+    "nuxt": "^2.14.12"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^3.4.2"
+  }
+}

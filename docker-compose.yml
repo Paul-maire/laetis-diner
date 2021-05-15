@@ -1,0 +1,13 @@
+version: "3"
+services:
+  laetis-diner:
+    command: nuxt
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      HOST: 0.0.0.0
+      API: http://localhost:5000
+    volumes:
+      - .:/laetis-diner
