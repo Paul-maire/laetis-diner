@@ -1,7 +1,7 @@
 <template>
     <label class="flex flex-col">
         <InputLabel v-if="label" :required="required">{{ label }}</InputLabel>
-        <div contenteditable="true" @input="$emit('input', $event.target.outerText)" >{{ value }}</div>
+        <div contenteditable="true" @input="$emit('input', $event.target.outerText)" v-once v-html="value" />
     </label>
 </template>
 
