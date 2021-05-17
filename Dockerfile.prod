@@ -2,17 +2,17 @@ FROM node:lts-alpine
 
 WORKDIR /laetis-diner
 
+COPY package.json /laetis-diner
+COPY yarn.lock /laetis-diner
+
 ENV NODE_ENV=production
 ENV HOST 0.0.0.0
+ENV PORT 3000
 ENV API https://laetis-diner-api.herokuapp.com/
-
-COPY package.json .
-COPY yarn.lock .
 
 RUN yarn
 
+COPY . /laetis-diner
 RUN yarn build
 
 EXPOSE 3000
-
-COPY . /laetis-diner
