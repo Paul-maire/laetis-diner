@@ -56,7 +56,7 @@ export default {
    },
 
    manifest: {
-    display: 'fullscreen',
+    display: 'standalone',
     theme_color: '#F0F0F3',
   },
 }
