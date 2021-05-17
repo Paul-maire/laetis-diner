@@ -1,0 +1,7 @@
+build:
+   config:
+      PORT: 3000
+   docker:
+      web: Dockerfile.prod
+run:
+   web: yarn start
