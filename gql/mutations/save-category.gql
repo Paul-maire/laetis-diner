@@ -1,0 +1,6 @@
+mutation savCategory($category: CategoryInput!) {
+  saveCategory(category: $category) {
+    id
+    name
+  }
+}
