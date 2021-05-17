@@ -8,11 +8,11 @@ COPY yarn.lock .
 ENV HOST 0.0.0.0
 ENV PORT 3000
 ENV API https://laetis-diner-api.herokuapp.com/
+ENV NODE_ENV=production
 
 COPY . /laetis-diner
 RUN yarn
 
-ENV NODE_ENV=production
 
 RUN yarn build
 
