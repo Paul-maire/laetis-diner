@@ -1,3 +1,5 @@
+const isProd = () => process.env.NODE_ENV == "production"
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -17,6 +19,7 @@ export default {
   },
 
   ssr: false,
+  serverMiddleware: isProd() ? ['redirect-ssl'] : undefined,
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
