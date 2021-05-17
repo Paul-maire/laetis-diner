@@ -1,6 +1,6 @@
 <template>
-    <span class="text-xs mb-1">
-        <slot /><sup v-if="required">*</sup>
+    <span class="text-xs mb-1 text-neutral-mid">
+        <slot /><sup v-if="required" class="text-neutral-mid">*</sup>
     </span>
 </template>
 

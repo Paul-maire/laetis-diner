@@ -15,7 +15,7 @@ export default {
 
 <style scoped>
     button {
-        @apply bg-grey flex items-center justify-center py-2 rounded-xl transition-all duration-150 text-xs font-semibold outline-none;
+        @apply bg-neutral-light flex items-center justify-center py-2 rounded-lg transition-all duration-150 text-xs font-semibold outline-none;
     }
 
     button:focus {

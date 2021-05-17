@@ -4,7 +4,7 @@
     <div class="grid grid-cols-12 gap-2">
       <input type="text" class="bg-grey col-span-10 rounded-lg px-4 flex-shrink-0 border-transparent outline-none focus:outline-none" placeholder="Recherche">
       <div class="h-12 w-12 bg-grey rounded-lg flex items-center justify-center" @click="toggle">
-        <i class="eva eva-options-2-outline"></i>
+        <i class="eva eva-options-2-outline icon-2xl"></i>
       </div>
     </div>
     <div class="flex flex-row flex-no-wrap overflow-x-scroll py-3 -mx-4 px-4">
@@ -42,6 +42,9 @@ export default {
       query: categories,
     },
   },
+  data: () => ({
+    categories_id: []
+  }),
   beforeMount() {
     // this.title('Trier par')
     this.base('Filters')
@@ -56,3 +59,8 @@ export default {
 }
 </script>
 
+<style scoped>
+.icon-2xl {
+  @apply text-2xl !important;
+}
+</style>

@@ -3,17 +3,14 @@
         <InputLabel v-if="label" :required="required">{{ label }}</InputLabel>
 
         <label v-for="(step, index) in value" :key="index" class="flex flex-col mb-2">
-            <InputLabel v-if="label" class="font-bold">{{ step_prefix }} {{ index + 1 }}</InputLabel>
+            <InputLabel>{{ step_prefix }} {{ index + 1 }}</InputLabel>
             <InputArea v-model="value[index]" />
         </label>
 
-        <label class="flex justify-between items-center">
-            <InputLabel v-if="label" class="font-bold">{{ step_prefix }} {{ value.length + 1 }}</InputLabel>
-            <button
-                class="h-8 w-8 bg-grey rounded-xl flex justify-center items-center"
-                @click="addStep"
-            >+</button>
-        </label>
+        <button class="text-sm font-poppins font-semibold flex items-center focus:outline-none" @click="addStep">
+            <i class="eva eva-plus mr-1"/>
+            Ajouter une étape
+        </button>
     </div>
 </template>
 

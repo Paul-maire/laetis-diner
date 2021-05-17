@@ -30,10 +30,10 @@ export default {
 
 <style scoped>
 input {
-  @apply rounded-xl bg-grey border border-transparent outline-none;
+  @apply rounded-lg bg-neutral-light border border-transparent outline-none;
 }
 
 input:focus {
-  @apply border-dark bg-white outline-none;
+  @apply border-neutral-darker bg-neutral-white outline-none ring-transparent;
 }
 </style>

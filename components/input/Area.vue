@@ -30,10 +30,10 @@ export default {
 
 <style scoped>
 div {
-  @apply rounded-xl bg-grey border border-transparent outline-none px-3 py-2;
+  @apply rounded-lg bg-neutral-light border border-transparent outline-none px-3 py-2 min-h-area;
 }
 
 div:focus {
-  @apply border-dark bg-white outline-none;
+  @apply border-neutral-darker bg-neutral-white outline-none;
 }
 </style>

@@ -1,11 +1,20 @@
 <template>
-    <label class="flex flex-col">
+    <label class="flex flex-col" @click="focus = true">
         <InputLabel v-if="label" :required="required">{{ label }}</InputLabel>
         <input
+            v-if="focus || !value"
             @input="$emit('input', $event.target.value)"
             :value="value"
+            class="field"
             type="number"
+            @blur="focus = false"
         />
+        <div
+            v-else
+            class="field py-2 px-3"
+        >
+            {{ value | time("long") }}
+        </div>
     </label>
 </template>
 
@@ -24,16 +33,19 @@ export default {
             type: Boolean,
             default: false
         }
-    }
+    },
+    data: () => ({
+        focus: false
+    })
 }
 </script>
 
 <style scoped>
-input {
-    @apply rounded-xl bg-grey border border-transparent outline-none;
+.field {
+    @apply rounded-lg bg-neutral-light border border-transparent outline-none;
 }
 
-input:focus {
-    @apply text-right border-dark bg-white outline-none;
+.field:focus {
+    @apply text-right border-neutral-darker bg-neutral-white outline-none ring-transparent;
 }
 </style>

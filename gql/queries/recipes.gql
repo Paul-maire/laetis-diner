@@ -5,22 +5,11 @@ query recipes {
 
       categories {
          id
-         name
       }
       difficulty
       done
 
-      preparation_time
       rest_time
-      baking_time
-      total_time
-
-      servings
-      ingredients
-      utensils
-
-      preparation_steps
-
-      notes
+      preparation_time
    }
 }

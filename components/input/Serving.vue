@@ -4,18 +4,18 @@
         <div class="field">
             <span>{{ value }}</span>
             <div class="flex items-center justify-between">
-                <button @click="$emit('input', value + 1)">+</button>
-                <button @click="(value > 0) ? $emit('input', value - 1) : null">-</button>
+                <i class="eva eva-minus-outline btn" @click="minus"/>
+                <i class="eva eva-plus-outline btn" @click="plus"/>
             </div>
         </div>
     </label>
     <div v-else>
         <div class="field">
-            <span>Nombre de personne</span>
+            <span class="text-sm text-neutral-mid">Nombre de personne</span>
             <div class="flex items-center justify-between">
-                <button @click="$emit('input', value + 1)">+</button>
+                <i class="eva eva-minus-outline btn" @click="minus" />
                 <span class="ml-4 font-bold">{{ value }}</span>
-                <button @click="(value > 0) ? $emit('input', value - 1) : null">-</button>
+                <i class="eva eva-plus-outline btn" @click="plus"/>
             </div>
         </div>
     </div>
@@ -32,24 +32,29 @@ export default {
             type: Boolean,
             default: false
         }
-    } 
+    },
+    methods: {
+        plus() {
+            this.$emit('input', this.value + 1)
+        },
+        minus() {
+            if(this.value > 1) 
+                this.$emit('input', this.value - 1)
+        }
+    }
 }
 </script>
 
 <style scoped>
 .field {
-  @apply rounded-xl bg-grey border border-transparent outline-none flex flex-row justify-between items-center px-3 py-1;
+  @apply rounded-lg bg-neutral-light border border-transparent flex flex-row justify-between items-center px-3 py-1;
 }
 
 .field:focus {
-  @apply border-dark bg-white outline-none;
+  @apply border-neutral-darker bg-neutral-white;
 }
 
-button {
-    @apply bg-white text-xl rounded-lg ml-4 px-3 py-1 flex items-center justify-center relative flex-shrink-0 outline-none;
-}
-
-button:focus {
-    @apply outline-none;
+.btn {
+    @apply bg-white text-xl rounded-lg ml-4 px-2 py-1;
 }
 </style>

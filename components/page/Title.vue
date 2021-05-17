@@ -1,6 +1,6 @@
 <template>
     <div class="flex items-center">
-      <PageBack v-if="back" /> <h1 class="text-2xl font-semibold"><slot /></h1>
+      <PageBack v-if="back" /> <h1 class="text-2xl font-semibold font-poppins text-neutral-darker"><slot /></h1>
     </div>
 </template>
 
