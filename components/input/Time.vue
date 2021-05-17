@@ -7,6 +7,8 @@
             :value="value"
             class="field"
             type="number"
+            pattern="[0-9]*"
+            inputmode="numeric"
             @blur="focus = false"
         />
         <div
