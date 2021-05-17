@@ -1,8 +1,19 @@
 <template>
-  <div class="h-screen w-screen">
+  <div class="h-screen w-screen md:px-24 lg:px-36 xl:px-60">
     <Nuxt />
+    <BottomSheet v-if="show"/>
   </div>
 </template>
+
+<script>
+import { mapGetters } from 'vuex'
+
+export default {
+  computed: {
+    ...mapGetters('bottom-sheet', ['show'])
+  },
+}
+</script>
 
 <style>
 html {

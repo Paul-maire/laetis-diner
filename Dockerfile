@@ -1,12 +1,14 @@
-FROM node:current-alpine
+FROM node:lts-alpine
 
 WORKDIR /laetis-diner
 
 ENV NODE_ENV=development
 
-RUN set -ex; \
-	yarn global add nuxt;
-
-COPY . /laetis-diner
+COPY package.json .
+COPY yarn.lock .
 
 RUN yarn
+
+RUN yarn global add nuxt
+
+COPY . /laetis-diner

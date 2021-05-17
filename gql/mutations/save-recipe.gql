@@ -1,24 +1,26 @@
 mutation saveRecipe($recipe: RecipeInput!) {
   saveRecipe(recipe: $recipe) {
     id
-
     title
 
-    # categories
-    # difficulty
-    # done
+    categories {
+        id
+        name
+    }
+    difficulty
+    done
 
-    # preparation_time
-    # rest_time
-    # baking_time
-    # total_time
+    preparation_time
+    rest_time
+    baking_time
+    total_time
 
-    # servings
-    # ingredients
-    # utensils
+    servings
+    ingredients
+    utensils
 
-    # preparation_steps
+    preparation_steps
 
-    # notes
+    notes
   }
 }

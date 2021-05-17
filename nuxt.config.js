@@ -10,25 +10,18 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
   },
 
   ssr: false,
 
-
-  // server: {
-  //   host: process.env.HOST, // default: localhost,
-  //   port: process.env.PORT
-  // },
-
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    { src: 'eva-icons/style/eva-icons.css', lang: 'css' }  
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/filters'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
