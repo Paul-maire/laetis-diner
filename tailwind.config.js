@@ -25,6 +25,12 @@ module.exports = {
         dark: '#3F414E',
         grey: "#F6F7FB",
       },
+      width: {
+        fit: 'fit-content'
+      },
+      height: {
+        fit: 'fit-content'
+      },
       boxShadow: {
         primary: '0px 4px 10px rgba(252, 150, 126, 0.4);'
       },
@@ -51,5 +57,6 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/forms'),
+    require('@tailwindcss/aspect-ratio')
   ],
 }

@@ -3,6 +3,8 @@ query recipes {
       id
       title
 
+      image
+
       categories {
          id
       }

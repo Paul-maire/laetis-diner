@@ -7,7 +7,7 @@
             <InputArea v-model="value[index]" />
         </label>
 
-        <button class="text-sm font-poppins font-semibold flex items-center focus:outline-none" @click="addStep">
+        <button class="text-sm font-poppins font-semibold flex items-center focus:outline-none mb-2" @click="addStep">
             <i class="eva eva-plus mr-1"/>
             Ajouter une étape
         </button>

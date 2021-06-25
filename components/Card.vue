@@ -1,8 +1,7 @@
 <template>
-  <div class="shadow-xl bg-white rounded-lg p-3 flex flex-no-wrap relative overflow-hidden">
+  <nuxt-link :to="link" class="shadow-xl bg-white rounded-lg p-3 flex flex-no-wrap relative overflow-hidden">
     <img
-      src="https://source.unsplash.com/random/300x300/?food,dinner"
-      alt=""
+      :src="recipe.image"
       class="w-20 h-20 rounded-lg bg-gray-200"
     >
     <div class="w-full pl-4 flex flex-col h-full justify-between">
@@ -14,7 +13,7 @@
       <i class="eva eva-pause-circle-outline mr-2" />
       Repos
     </div>
-  </div>
+  </nuxt-link>
 </template>
 
 <script>
@@ -22,6 +21,11 @@ export default {
   props: {
     recipe: {
       type: Object,
+    }
+  },
+  computed: {
+    link() {
+      return `/recipes/${this.recipe.id}` 
     }
   }
 }

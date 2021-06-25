@@ -1,10 +1,22 @@
 <template>
-  <div class="grid gap-4 p-4">
+  <div class="grid gap-4 p-4 grid-rows-12">
     <PageTitle back>Catégories</PageTitle>
-    <InputText
-        label="Ajouter une catégorie"
-        v-model="category"
-    />
+    <PageSection title="Ajouter une nouvelle catégorie">
+        <InputText
+            label="Nom de la catégorie"
+            v-model="category"
+        />
+    </PageSection>
+
+    <PageSection title="Mes catégories">
+        <div
+            class="shadow-md py-3 px-4 rounded-lg mb-2"
+            v-for="category in categories"
+            :key="category.id"
+        >
+            <p class="text-primary text-xs font-semibold">{{ category.name }}</p>
+        </div>
+    </PageSection>
     <ButtonLarge outline @click="submit">
       Enregistrer
     </ButtonLarge>
@@ -14,27 +26,18 @@
 <script>
 import categories from '~/gql/queries/categories'
 import save_category from '~/gql/mutations/save-category'
-import { mapMutations, mapActions } from 'vuex'
 
 export default {
     apollo: {
         categories: {
-         query: categories,
+            query: categories,
         },
     },
     data: () => ({
         category: null
     }),
-    beforeMount() {
-        // this.title('Trier par')
-        this.base('Filters')
-        // this.base_props({
-        //   title: 'heyyyy'
-        // })
-    },
+
     methods: {
-        ...mapMutations('bottom-sheet', ['title', 'base', 'details', 'base_props', 'toggle']),
-        ...mapActions('bottom-sheet', ['init']),
         async submit() {
             if(this.category) {
                 await this.$apollo.mutate({
@@ -44,14 +47,14 @@ export default {
                             name: this.category
                         },
                     },
-                    // update: (store, { data: { saveIdea } }) => {
-                    //     // Read data from cache
-                    //     const data = store.readQuery({ query: Ideas })
-                    //     // Add idea from the mutation to the end
-                    //     data.ideas.push(saveIdea)
-                    //     // Write data back to the cache.
-                    //     store.writeQuery({ query: Ideas, data })
-                    // },
+                    update: (store, { data: { saveCategory } }) => {
+                        // Read data from cache
+                        const data = store.readQuery({ query: categories })
+                        // Add idea from the mutation to the end
+                        data.categories.push(saveCategory)
+                        // Write data back to the cache.
+                        store.writeQuery({ query: categories, data })
+                    },
                 }).catch(console.error)
             }
         },

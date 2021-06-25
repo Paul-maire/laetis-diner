@@ -3,6 +3,8 @@ query recipe($id: Int!) {
       id
       title
 
+      image
+
       categories {
          id
          name
@@ -13,7 +15,7 @@ query recipe($id: Int!) {
       preparation_time
       rest_time
       baking_time
-      total_time
+      # total_time
 
       servings
       ingredients

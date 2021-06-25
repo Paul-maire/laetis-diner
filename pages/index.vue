@@ -31,7 +31,7 @@
 <script>
 import recipes_query from '~/gql/queries/recipes'
 import categories from '~/gql/queries/categories'
-import { mapMutations, mapActions } from 'vuex'
+import { mapMutations } from 'vuex'
 
 export default {
   apollo: {
@@ -46,16 +46,14 @@ export default {
     categories_id: []
   }),
   beforeMount() {
-    // this.title('Trier par')
-    this.base('Filters')
+    this.base('recipe/Filters')
     // this.base_props({
     //   title: 'heyyyy'
     // })
   },
   methods: {
-    ...mapMutations('bottom-sheet', ['title', 'base', 'details', 'base_props', 'toggle']),
-    ...mapActions('bottom-sheet', ['init']),
-  }
+    ...mapMutations('bottom-sheet', ['base', 'base_props', 'toggle']),
+  },
 }
 </script>
 

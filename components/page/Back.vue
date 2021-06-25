@@ -1,5 +1,5 @@
 <template>
-  <i @click="back" class="eva eva-chevron-left-outline mr-1 back -ml-2" />
+  <i @click="back" class="eva eva-chevron-left-outline back" />
 </template>
 
 <script>
