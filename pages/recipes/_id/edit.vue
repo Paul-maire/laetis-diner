@@ -57,14 +57,6 @@ export default {
 
             // if (result?.data?.editRecipe) return this.$router.go(-1)
         },
-        selectCategory(id) {
-            if(this.recipe.categories_id.includes(id)) {
-                const index = this.recipe.categories_id.findIndex(v => v == id)
-                this.recipe.categories_id.splice(index, 1)
-            } else {
-                this.recipe.categories_id.push(id)
-            }
-        },
         ...mapMutations('bottom-sheet', ['base', 'base_props', 'toggle']),
     }
 }

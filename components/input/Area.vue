@@ -30,7 +30,7 @@ export default {
 
 <style scoped>
 div {
-  @apply rounded-lg bg-neutral-light border border-transparent outline-none px-3 py-2 min-h-area;
+  @apply rounded-lg bg-neutral-lighter border border-transparent outline-none px-3 py-2 min-h-area;
 }
 
 div:focus {

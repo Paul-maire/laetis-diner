@@ -49,15 +49,7 @@ export default {
       }).catch(console.error)
 
       if (result?.data?.saveRecipe) return this.$router.push('/')
-    },
-    selectCategory(id) {
-      if(this.recipe.categories_id.includes(id)) {
-        const index = this.recipe.categories_id.findIndex(v => v == id)
-        this.recipe.categories_id.splice(index, 1)
-      } else {
-        this.recipe.categories_id.push(id)
-      }
-    },
+    }
   },
 }
 </script>

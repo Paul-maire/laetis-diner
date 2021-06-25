@@ -47,7 +47,7 @@ export default {
 
 <style scoped>
 .field {
-  @apply rounded-lg bg-neutral-light border border-transparent flex flex-row justify-between items-center px-3 py-1;
+  @apply rounded-lg bg-neutral-lighter border border-transparent flex flex-row justify-between items-center px-3 py-1;
 }
 
 .field:focus {

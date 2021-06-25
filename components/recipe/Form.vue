@@ -17,18 +17,18 @@
         </label> -->
 
         <InputLabel>Catégories</InputLabel>
-            <div class="flex flex-row flex-no-wrap overflow-x-scroll py-3 -mx-4 px-4">
-                <nuxt-link
-                    class="eva eva-settings-2-outline bg-grey p-1 rounded-lg mr-2"
-                    to="/categories"
-                />
-                <ButtonBadge
-                    v-for="category in categories"
-                    :key="category.id"
-                    :active="value.categories_id.includes(category.id)"
-                    @click.native="selectCategory(category.id)"
-                >{{ category.name }}</ButtonBadge>
-            </div>
+        <div class="flex flex-row flex-no-wrap overflow-x-scroll py-3 -mx-4 px-4">
+            <nuxt-link
+                class="eva eva-settings-2-outline bg-grey p-1 rounded-lg mr-2"
+                to="/categories"
+            />
+            <ButtonBadge
+                v-for="category in categories"
+                :key="category.id"
+                :active="value.categories_id.includes(category.id)"
+                @click.native="selectCategory(category.id)"
+            >{{ category.name }}</ButtonBadge>
+        </div>
 
         </PageSection>
 
@@ -118,10 +118,10 @@
         </PageSection>
     
         <PageSection title="Informations supplémentaires">
-            <!-- <InputArea
+            <InputArea
                 label="Notes"
                 v-model="value.notes"
-            /> -->
+            />
         </PageSection>
   </div>
 </template>
@@ -132,7 +132,7 @@ import categories from '~/gql/queries/categories'
 export default {
     apollo: {
         categories: {
-            query: categories,
+            query: categories
         },
     },
     props: {
@@ -140,6 +140,11 @@ export default {
             type: Object,
             required: true
         }
+    },
+    beforeMount() {
+        console.log(this.value)
+        this.value.utensils = this.transform(this.value.utensils)
+        this.value.ingredients = this.transform(this.value.ingredients)
     },
     methods: {
         selectCategory(id) {

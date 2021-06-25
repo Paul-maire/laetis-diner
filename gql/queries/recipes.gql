@@ -8,6 +8,7 @@ query recipes {
       categories {
          id
       }
+      categories_id
       difficulty
       done
 

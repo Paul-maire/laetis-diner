@@ -9,6 +9,7 @@ query recipe($id: Int!) {
          id
          name
       }
+      categories_id
       difficulty
       done
 
